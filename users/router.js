@@ -7,9 +7,15 @@ const {User} = require('./models');
 const router = express.Router();
 
 const jsonParser = bodyParser.json();
-
+router.use(bodyParser.urlencoded({ extended: true })); 
+router.use(bodyParser.json());
+router.get('/login', function(req, res, next) {
+  console.log(req.body);
+  res.render('index', { title: 'dog' });
+});
 // Post to register a new user
 router.post('/', jsonParser, (req, res) => {
+  console.log(req.body, 'apple')
   const requiredFields = ['username', 'password'];
   const missingField = requiredFields.find(field => !(field in req.body));
 

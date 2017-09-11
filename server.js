@@ -1,5 +1,4 @@
-var index = require('./routes/index');
-var users = require('./routes/users');
+
 
 
 require('dotenv').config();
@@ -67,6 +66,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 console.log(path.join(__dirname, 'public'));
+var index = require('./routes/index');
+var users = require('./routes/users');
 app.use('/', index);
 app.use('/users', users);
 // Referenced by both runServer and closeServer. closeServer
