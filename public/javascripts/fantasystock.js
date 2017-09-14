@@ -1,24 +1,23 @@
-$('.btn').click(function() {
+/*$('.btn').click(function() {
   
-  $('.text').text('loading . . .');
+  $('.text').text('loading . . .');*/
   
   $.ajax({
     type:"GET",
-    url: "https://www.quandl.com/api/v3/databases/YC/data?download_type=partial"
+    url: "convertcsv.json"
     ,
     success: function(data) {
       console.log(data);
-      $('.text').text(JSON.stringify(data));
+      /*$('.text').text(JSON.stringify(data));*/
     },
     dataType: 'json',
   });
   
-});
+//});
 
 /*fetch("https://www.quandl.com/api/v3/datasets/WIKI/FB/data.csv")
 .then(response => response.json())
 .then(data => {
-  // Here's a list of repos!
   console.log(data)
 });*/
 

@@ -1,0 +1,9 @@
+extends layout
+block content
+  body 
+    form(method='POST' action='http://localhost:8080/createleague')
+          div.form-group
+            label(for='leaguename') Name:
+            input#name.form-control(type='text', placeholder='first and last' name='username')
+          button.btn.btn-primary(type='submit') Create League
+  
