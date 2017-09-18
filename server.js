@@ -13,7 +13,8 @@ var cookieParser = require('cookie-parser');
 const {router: usersRouter} = require('./users');
 const {router: authRouter, basicStrategy, jwtStrategy} = require('./auth');
 const {router: simpleRouter} = require('./simple');
-
+const {router: leagueRouter} = require('./leagues');
+const {router: teamRouter} = require('./teams');
 mongoose.Promise = global.Promise;
 
 const {PORT, DATABASE_URL} = require('./config');
@@ -41,6 +42,8 @@ passport.use(jwtStrategy);
 app.use('/api/users/', usersRouter);
 app.use('/api/auth/', authRouter);
 app.use('/api/simple/', simpleRouter);
+app.use('/', leagueRouter);
+app.use('/', teamRouter);
 
 // A protected endpoint which needs a valid JWT to access it
 app.get('/api/protected',

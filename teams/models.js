@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
-const LeagueSchema = mongoose.Schema({
+const TeamSchema = mongoose.Schema({
   name: {
     type: String,
     default: "noname"
   },
-  teams: {
+  stocks: {
     type: Array
   }
 
@@ -16,6 +16,6 @@ const LeagueSchema = mongoose.Schema({
 
 
 
-const League = mongoose.model('League', LeagueSchema);
+const Team = mongoose.model('Team', TeamSchema);
 
-module.exports = {League};
+module.exports = {Team};

@@ -9,3 +9,8 @@ block content
     p Apple
     p Starbucks
     p GE
+    form(method='POST' action='/createteam')
+          div.form-group
+            label(for='teamname') Name:
+            input#name.form-control(type='text', placeholder='Write your team name' name='teamname')
+          button.btn.btn-primary(type='submit') Create Team

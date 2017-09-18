@@ -1,4 +1,4 @@
-const {Simple} = require('./models');
+const {League} = require('./models');
 const {router} = require('./router');
 
-module.exports = {Simple, router};
+module.exports = {League, router};
